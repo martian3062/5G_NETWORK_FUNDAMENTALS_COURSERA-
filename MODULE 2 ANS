@@ -1,0 +1,119 @@
+Question 1: 5G compared to 4G
+Correct Answer:
+Is designed to meet the needs of connections in a wide range of application areas
+Question 2: Waste bins sending messages when 80% full
+Low energy consumption
+Question 3: 5G will allow (select 2 answers)
+Correct Answers:
+
+-->The development of low latency applications such as online video games
+-->Transfer data faster
+
+Question 4: Mode for smart grids using 5G
+Correct Answer:
+uRLLC
+
+QUIZ 2
+
+Question 1: 5G is designed to provide:
+Ethernet, IP, and unstructured connectivity services.
+
+Question 2: When a PDU session is established in 5G:
+The terminal has an address in the packet data network (PDN) and can transmit or receive data.
+
+Question 3: A company developing a mobile service using the location information of terminals in 5G:
+It establishes an agreement with the mobile operator who then provides the location information.
+
+QUIZ 3
+
+Question 1: In 5G, a subscriber is identified:
+By the SUPI, which can match with an IMSI.
+
+Question 2: In a stand-alone 5G network:
+The air interface and the core network are different from 4G.
+
+Question 3: The NR (New Radio) interface of 5G:
+Is an evolution of 4G
+
+Question 4: What can be connected to a 5G Core Network (5GC)? (Select 3 answers)
+a gNB
+
+QUIZ 4
+
+Question 1: A user data packet transmitted during a PDU session passes through a node implementing a function (select 2 answers):
+gNB
+UPF (User Plane Function)
+
+Question 2: Indicate the functional entities with which the UE exchanges signalling directly or indirectly. Indirect exchange means that the message may pass through an intermediary which merely relays it, i.e. receives and forwards it without analysing the content (select 3 answers):
+AMF (Access and Mobility management Function)
+gNB
+SMF (Session Management Function)
+
+Question 3: Consider a 5G network connected to an IP-based Packet Data Network (PDN). The allocation of the IP address to the UE is done by:
+SMF (Session Management Function)
+
+Question 4: The UDM (Unified Data Management function):
+Manages subscriber identification and subscription management.
+
+QUIZ 5 
+
+Question 1: In 5G, the AUSF and UDM:
+Correspond to functions that can be executed either on the same machine or on different machines.
+
+Question 2: Elasticity is a property that characterizes:
+A functional breakdown where function instances can be dynamically started or stopped according to the current network load.
+
+3.Virtualization of network functions is supported:
+Through the use of the HTTP protocol between the functional entities of the 5G core network and stateless servers.
+
+QUIZ 6 
+
+Question 1: In 5G, the PCF is:
+
+The Policy Control Function.
+Question 2: Consider a 5G subscriber who goes abroad. The scenario is "Home Routed". When a data flow is established with a quality-of-service level (e.g. minimum data rate guarantee):
+
+The two PCFs (vPCF and hPCF) intervene.
+Question 3: In 5G, the Network-function Repository Function (NRF):
+
+Allows an entity to determine the entities providing a given service.
+Question 4: Consider a company S that wants to offer a particular service whenever someone turns on their 5G terminal:
+
+It addresses the 5G operator to be notified of the "power on" event.
+Question 5: In the previous case, the service platform of company S communicates with:
+
+The NEF (Network Exposure Function).
+Question 6: Which acronym is NOT defined in 5G?
+
+WXYZ
+
+HOMEWORK M1
+Question 1: The order of magnitude of the expected average throughput perceived by the user for 5G is:
+
+100 Mbit/s
+Question 2: Which mode is most suitable for a "Film Loading" application?
+
+eMBB (enhanced Mobile Broadband)
+Question 3: Which mode is most suitable for the "Sensors in buildings" application?
+
+mMTC (massive Machine Type Communications)
+Question 4: Which mode is most suitable for the "PLC and Industrial Robot" control application?
+
+uRLLC (ultra-Reliable Low Latency Communications)
+Question 5: What is the order of magnitude of the latency targeted in the 5G uRLLC mode?
+
+1 milli-second
+Question 6: Let’s consider a 5G network that provides IP connectivity. It allocates to the UE:
+
+An IPv4 address or an IPv6 address
+Question 7: A "PDU session" in 5G is:
+
+Equivalent to saying that a UE is connected to an external network called PDN (Packet Data Network).
+
+Question 9: In 5G, a subscriber is identified:
+
+By the SUPI (Subscription Permanent Identifier)
+Question 10: With which functions is an NR (New Radio) interface available? (select 2 answers):
+
+an en-gNB
+a gNB
