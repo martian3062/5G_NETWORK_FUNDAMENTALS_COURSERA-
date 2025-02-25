@@ -1,0 +1,95 @@
+m2-l1
+Q1: The 5G‑NR interface is based on
+Answer: Orthogonal Frequency Division Multiplexing (OFDM)
+Explanation: 5G New Radio uses OFDM as its modulation scheme to provide high spectral efficiency and robust performance in multipath environments.
+
+Q3: The duration of an OFDM symbol is
+Answer: inversely proportional to the spacing between subcarriers
+Explanation: In OFDM, the symbol duration T is given by T = 1/Δf, where Δf is the subcarrier spacing.
+
+Q4: A large subcarrier spacing (large numerology) should be used from 6 GHz onwards because (select 2 answers)
+Answers:
+
+the available band is wider as you go up in frequency,
+small cells are deployed above 6 GHz where the excess delays are small
+Explanation: At higher frequencies, there is generally a larger contiguous bandwidth available and deployments tend to use small cells (with lower delay spreads), both of which favor larger subcarrier spacings.
+Q5: For NR numerology 1 (30‑kHz spacing) with 324 subcarriers, the approximate bandwidth is
+Answer: 9.72
+Explanation: Multiplying 324 subcarriers by 30 kHz gives 9720 kHz, or 9.72 MHz.
+
+m2-l2
+
+S2.V2.Q1: A sub-frame in NR has a duration equal to 1 ms.
+
+✅ Answer: has a duration equal to 1 ms
+S2.V2.Q2: A time slot in NR depends on the numerology.
+
+✅ Answer: has a duration that depends on the numerology
+S2.V2.Q3: In NR, a UE can be allocated one or more resource blocks per slot.
+
+✅ Answer: one or more resource blocks at each slot
+S2.V2.Q4: A resource block (RB) in NR consists of 12 subcarriers and 14 symbols (for normal CP).
+Answer: corresponds to 12 subcarriers and any number of successive symbols
+
+m2l3
+
+Beamforming is based on:
+
+The use of antenna arrays
+Beamforming involves using multiple antennas (antenna arrays) to direct signal transmission or reception in specific directions, enhancing signal strength and reducing interference. 
+VERKOTAN.COM
+
+The beam is more narrow:
+
+If the number of antenna elements is increased
+Increasing the number of antenna elements in an array allows for a narrower beam, providing better directionality and improved signal focus. 
+COMMSCOPE.COM
+
+Consider a first transmission with only one antenna and power P. Now consider an array of 2 antenna elements, the same total power, and ideal beamforming. Compared to the initial case, the power received by a terminal at a given distance (assumed far from the antennas) is:
+
+Multiplied by 2
+
+
+m2l4 
+Question 1 (S2.V4.Q1)
+Scenario: The base station has an antenna array, and you need to determine in which configuration it is possible to serve both terminals simultaneously using MU-MIMO (Multi-User MIMO).
+
+Answer: Based on the line-of-sight propagation assumption and the antenna array setup, it seems that Option C is the correct answer. This configuration would likely support both terminals due to the line-of-sight setup and no obstructions.
+Question 2 (S2.V4.Q2)
+Scenario: Now considering propagation with obstacles and only one path per terminal.
+
+Answer: The correct option here would be Option B. This setup, where both terminals have one path each, is more likely to support MU-MIMO simultaneously than the other configurations.
+Question 3 (S2.V4.Q3)
+Scenario: In a network with 8-antenna base stations and 2-antenna terminals, how many simultaneous streams can a terminal receive at most?
+
+Answer: Given the scenario with 8 antennas at the base station and 2 at the terminal, the maximum number of streams the terminal can receive would be 2 streams, as each antenna at the terminal can receive a stream.
+Question 4 (S2.V4.Q4)
+Scenario: Under the same conditions, how many simultaneous streams can a terminal transmit at most?
+
+Answer: Similar to the previous question, under the same conditions, the terminal can transmit 2 streams at most.
+Question 5 (S2.V4.Q5)
+Scenario: The maximum number of streams per terminal is used. How many different terminals at most can be served on the same time-frequency resources?
+
+Answer: Since the base station has 8 antennas, and each terminal can have 2 streams, 4 terminals can be served at most simultaneously on the same time-frequency resources.
+
+M2l5
+
+In 5G-NR, to indicate to which terminal a resource is allocated, the gNB specifies:
+
+Answer: The RNTI allocated to the terminal.
+The RNTI (Radio Network Temporary Identifier) is used to identify a terminal in 5G NR. It is allocated to the terminal to indicate the resources assigned to it.
+Question 2
+In 5G-NR, the Downlink Control Information (DCI) message indicates the allocated resource:
+
+Answer: In the time slot specified by the time domain assignment field.
+The DCI message provides information regarding the resource allocation, and it specifies the time slot for the allocation through the time domain assignment field.
+Question 3
+In 5G-NR, the Downlink Control Information (DCI) message:
+
+Answer: Can be beam-formed to a particular terminal.
+In 5G NR, beamforming is used to target the DCI message to a specific terminal, optimizing the signal's strength and quality for that terminal.
+Question 4
+In 5G-NR, the protocol stack:
+
+Answer: Contains an additional layer called SDAP.
+The 5G NR protocol stack includes a new layer called SDAP (Service Data Adaptation Protocol), which is introduced to handle the mapping between QoS flows and data bearers.
