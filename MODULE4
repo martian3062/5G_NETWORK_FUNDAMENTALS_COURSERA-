@@ -1,0 +1,39 @@
+m3l1
+
+ 1. CUPS consists of
+separating the control and data planes for the nodes concerned by user data flow
+
+ 2. In a 5G CUPS architecture, the UPF
+applies the routing policy sent by the SMF
+
+3. In CUPS architecture, a UPF
+ systematically receives from the SMF a set of rules defining the forwarding and QoS management for each new data flow
+
+m3l2
+Question 1: In CUPS architecture,
+
+Answer: the 32-bit TEID is retained to identify each endpoint of the tunnel but the SEID is added to uniquely identify a session
+Explanation: In the CUPS architecture, the 32-bit Tunnel Endpoint Identifier (TEID) is maintained to identify each endpoint of 
+the tunnel. Additionally, a 64-bit Session Endpoint Identifier (SEID) is introduced to uniquely identify a session, enhancing the
+granularity and management of sessions within the network. 
+
+Question 2: The Packet Forwarding Control Protocol (PFCP) operates over
+
+Answer: UDP
+Explanation: PFCP operates over the User Datagram Protocol (UDP). It is a signaling protocol used 
+for communication between control plane and user plane functions in 4G and 5G networks, facilitating the implementation of
+Control and User Plane Separation (CUPS). 
+
+Question 3: A PFCP message sent by an SMF to a UPF
+
+Answer: is never lost because PFCP includes a retransmission process
+Explanation: PFCP includes a retransmission mechanism to ensure reliable message delivery. If a PFCP message sent by a 
+Session Management Function (SMF) to a User Plane Function (UPF) is not acknowledged, it will be retransmitted
+according to the protocol's retransmission strategy. 
+
+Question 4: The association between an SMF and a UPF
+
+Answer: is done when a new SMF or UPF instance is started
+Explanation: The association between a Session Management Function (SMF) and a User Plane Function (UPF) is 
+established when a new SMF or UPF instance is started. This association is necessary for the SMF to manage sessions
+and control the user plane functions effectively. 
