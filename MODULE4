@@ -37,3 +37,32 @@ Answer: is done when a new SMF or UPF instance is started
 Explanation: The association between a Session Management Function (SMF) and a User Plane Function (UPF) is 
 established when a new SMF or UPF instance is started. This association is necessary for the SMF to manage sessions
 and control the user plane functions effectively. 
+
+m3l3
+
+In CUPS architecture, TEID:
+
+The correct answer is: can be chosen by the SMF or the UPF depending on the configuration choice
+
+Regarding the TEID local to the gNB (to the radio access network):
+
+The correct answer is: chosen by the gNB and transmitted to the UPF via AMF and SMF
+
+m3l4
+1. In 5G, 
+PDU session establishment may be done after registering in the network
+
+2. The functional entities necessarily involved in the registration of a UE in the network are:
+
+AMF (Access and Mobility Management Function)
+AUSF (Authentication Server Function)
+gNB (Next Generation NodeB)
+UDM (Unified Data Management)
+
+3. The functional entities necessarily involved in establishing a PDU session are:
+
+AMF
+gNB
+SMF (Session Management Function)
+
+
