@@ -2,14 +2,11 @@ m2-l1
 Q1: The 5G‑NR interface is based on
 Answer: Orthogonal Frequency Division Multiplexing (OFDM)
 Explanation: 5G New Radio uses OFDM as its modulation scheme to provide high spectral efficiency and robust performance in multipath environments.
-
 Q3: The duration of an OFDM symbol is
 Answer: inversely proportional to the spacing between subcarriers
 Explanation: In OFDM, the symbol duration T is given by T = 1/Δf, where Δf is the subcarrier spacing.
-
 Q4: A large subcarrier spacing (large numerology) should be used from 6 GHz onwards because (select 2 answers)
 Answers:
-
 the available band is wider as you go up in frequency,
 small cells are deployed above 6 GHz where the excess delays are small
 Explanation: At higher frequencies, there is generally a larger contiguous bandwidth available and deployments tend to use small cells (with lower delay spreads), both of which favor larger subcarrier spacings.
