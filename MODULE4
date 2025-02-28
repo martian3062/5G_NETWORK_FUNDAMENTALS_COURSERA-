@@ -65,4 +65,29 @@ AMF
 gNB
 SMF (Session Management Function)
 
+m3l5
+When a UE changes from "CM-idle/RRC-idle" to "CM-connected/RRC-Connected" state:
+
+The following entities exchange messages (in addition to the UE):
+
+AMF
+
+gNB
+
+The AMF and gNB are involved in establishing the NAS signaling connection and RRC connection respectively25. The other entities (AUSF, SMF, UDM, UPF, NRF) are not directly involved in this state transition.
+
+In "RRC-inactive" state, the following connections and tunnels are maintained:
+
+gNB-AMF connection
+
+gNB-UPF tunnel
+
+In RRC_INACTIVE state, the UE context is stored in both the UE and the last serving gNB. The gNB maintains the NG connections (NG-C and NG-U) with the AMF and UPF47.
+
+Reasons for defining a new RRC state (RRC_INACTIVE) in 5G:
+
+To limit the demands on the core network entities, in particular the AMF
+
+To reduce latency when exchanging data after a period of inactivity
+
 
