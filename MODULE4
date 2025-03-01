@@ -74,7 +74,8 @@ AMF
 
 gNB
 
-The AMF and gNB are involved in establishing the NAS signaling connection and RRC connection respectively25. The other entities (AUSF, SMF, UDM, UPF, NRF) are not directly involved in this state transition.
+The AMF and gNB are involved in establishing the NAS signaling connection and RRC connection respectively25. The other entities (AUSF, SMF, UDM, UPF, NRF) 
+are not directly involved in this state transition.
 
 In "RRC-inactive" state, the following connections and tunnels are maintained:
 
@@ -90,4 +91,140 @@ To limit the demands on the core network entities, in particular the AMF
 
 To reduce latency when exchanging data after a period of inactivity
 
+m3l6
+Given a terminal in RRC-Connected state, what identity is allocated to it by the radio access network (the gNB)?
 
+The correct answer is:
+
+an RNTI
+
+In RRC_CONNECTED state, the gNB allocates a Cell Radio Network Temporary Identifier (C-RNTI) to the UE. This C-RNTI is
+used as an identifier for the RRC connection and for scheduling purposes3.
+
+In which state or states does the gNB maintain a context for a UE?
+
+The correct answers are:
+
+RRC-inactive
+RRC-connected
+
+In RRC_CONNECTED state, the gNB maintains full context for the UE. In RRC_INACTIVE state, the AS context is stored
+by both UE and gNB4. The gNB does not maintain context for UEs in RRC_IDLE state.
+
+A UE in the RRC-inactive state wants to send a data stream,
+
+The correct answer is:
+
+it must perform a random access procedure so that an RNTI is allocated to it and then it can transmit the flow
+
+When a UE in RRC_INACTIVE state wants to send data, it needs to perform a random access procedure to transition back to RRC_CONNECTED state.
+This involves sending an RRC Resume Request to the gNB, which then allocates a new C-RNTI to the UE before data transmission can begin
+
+M3L7
+
+1.  an RRC Resume Request message and then goes into RRC-idle, RRC-inactive or RRC-connected state depending on the network choice
+
+2. equivalent for the scenario
+
+3. B and C
+
+M3
+S3.DS.Q1: In a 5G CUPS-type architecture
+The correct answer is:
+
+each UPF applies the routing policy sent by the SMF
+
+Explanation:
+
+In a 5G CUPS (Control and User Plane Separation) architecture, the UPF (User Plane Function) operates based on routing policies 
+provided by the SMF (Session Management Function). The SMF defines and sends these policies to ensure proper data routing and QoS management56.
+
+S3.DS.Q2: The Packet Forwarding Control Protocol (PFCP) operates on top of UDP. In case of packet loss on the network between an SMF and a UPF
+The correct answer is:
+
+PFCP messages not received are detected by an acknowledgment mechanism and retransmitted
+
+Explanation:
+
+PFCP, which operates over UDP, includes an acknowledgment mechanism to detect lost packets. If a message is not acknowledged, 
+it is retransmitted to ensure reliable communication between the SMF and UPF69.
+
+S3.DS.Q3: The profile of the subscriber, regarding the characteristics of the sessions he can establish
+The correct answer is:
+
+is transmitted to the SMF by the UDM in response to the Nudm_SDM_Get message
+
+Explanation:
+
+During PDU session establishment, the SMF retrieves subscriber profile information from the UDM (Unified Data Management) via
+the Nudm_SDM_Get message. This profile includes session characteristics such as QoS parameters and allowed session types78.
+
+S3.DS.Q4: The Nudm_SDM_Subscribe exchange between the SMF and the UDM
+The correct answer is:
+
+allows the SMF to be notified if the subscriber's profile changes
+
+Explanation:
+
+The Nudm_SDM_Subscribe procedure enables the SMF to subscribe for notifications from the UDM about changes in a subscriber's profile.
+This ensures that any updates to subscription data are promptly communicated to relevant network functions8.
+
+S3.DS.Q5: What is the purpose of exchanging N4 Session-Modification-Request and N4 Session-Modification-Response?
+The correct answer is:
+
+Adapt the quality of service of the session to the specific demands of the UE
+
+Explanation:
+
+The N4 Session Modification procedure allows updates to existing PDU session parameters, such as QoS configurations, 
+based on changing requirements or demands from the UE. This ensures that service quality aligns with user needs9.
+
+S3.DS.Q6: When is data exchange possible in both directions (see numbers in circles)?
+The correct answer is:
+
+instant 4
+
+Explanation:
+
+Data exchange in both directions becomes possible only after all signaling procedures for PDU session establishment are completed, 
+which happens at instant 5 when all necessary configurations are finalized.
+
+S3.DS.Q7: Given that the UE is in the RRC-connected state at t=0, which representation of the evolution of the RRC state is correct?
+The correct answer is:
+
+C
+
+Explanation:
+
+Based on the operator's strategy, a UE transitions from RRC_CONNECTED to RRC_INACTIVE after 10 seconds of inactivity and
+then to RRC_IDLE after 50 seconds (10+40 seconds). Representation A accurately reflects this behavior.
+
+S3.DS.Q8: What is the only network function involved during the signaling procedure done at t=58?
+The correct answer is:
+
+gNB
+
+Explanation:
+
+At t=58, signaling involves only local interactions between the UE and gNB as part of RRC state transitions or 
+context updates. No core network functions like AMF or SMF are involved.
+
+S3.DS.Q9: Which functional entities are involved in the signaling procedure at t=152?
+The correct answers are:
+
+AMF
+UPF
+
+Explanation:
+
+At t=152, signaling involves both gNB and AMF for procedures like RRC state transitions or NAS signaling updates.
+These entities coordinate to manage UE mobility or state changes.
+
+S3.DS.Q10: At t=120, when a UE changes cell and goes to a cell that belongs to a different RNA, what does it do?
+The correct answer is:
+
+performs an RRC-resume procedure
+
+Explanation:
+
+When a UE in RRC_INACTIVE moves to a new RNA, it performs an RRC Resume procedure to re-establish its connection with minimal signaling overhead while maintaining its context11
