@@ -165,4 +165,37 @@ S4.V6.Q3: A bidding-down attack in 5G
 
 is detected then stopped
 
-Explanation: While bidding-down attacks are still possible in 5G networks, various mitigations have been integrated into the latest 4G and 5G specifications2. These mitigations aim to detect and prevent such attacks, although the effectiveness varies across implementations and devices.
+Explanation: While bidding-down attacks are still possible in 5G networks, various mitigations have been integrated into the latest 4G and 5G specifications2. 
+These mitigations aim to detect and prevent such attacks, although the effectiveness varies across implementations and devices.
+
+M4 
+Answer
+5G security features are based on the same basic principles as 4G but strengthen and extend them1.
+
+The ARPF linked to a UE is always in the home network of the UE3.
+
+Only one authentication vector per UE is loaded into the SEAF in order not to saturate the SEAF and reduce the response time.
+
+The UE uses the SUCI to identify itself3.
+
+The conversion from SUCI to SUPI is achieved by SIDF3.
+
+The calculation of SUCI from SUPI is done by the terminal and the USIM card3.
+
+The SUPI of a UE is never transmitted in clear text on the radio interface3.
+
+Authentication is performed by the AUSF of the home network7.
+
+The equality check between HRES* and HXRES* is done by the AMF/SEAF of the visited network7.
+
+XRES* is calculated in the home network and transmitted to any network that requests it7.
+
+The value of K_SEAF' is necessarily identical to the value of K_SEAF.
+
+A key provided by the AUSF can be used only on the network that requests it7.
+
+The key K_gNB is calculated by the AMF and transmitted to the gNB.
+
+A fallback attack on the UE network capabilities of a terminal is detected in 5G by comparing the network capabilities of the terminal sent to the network with those echoed by the network3.
+
+A fallback attack in 5G is detected by the UE during the registration process3
