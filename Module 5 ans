@@ -1,0 +1,86 @@
+S4.Pr.Q1: Securing 4G radio access is based on
+The correct answer is:
+
+symmetric cryptography with keys stored in USIM cards and HSS
+
+Explanation:
+
+4G security relies on symmetric cryptography. The secret keys used for encryption and authentication are securely
+stored in the USIM (Universal Subscriber Identity Module) on the UE and in the HSS (Home Subscriber Server) in the network56.
+
+S4.Pr.Q2: A 4G network authenticates a UE
+The correct answer is:
+
+by sending a random number and checking that the result calculated by the UE is equal to the expected result
+
+Explanation:
+
+In 4G, the network sends a RAND (random number) to the UE during authentication. The UE calculates 
+a response (RES) using its secret key and RAND, which is then compared to the expected result (XRES) computed by the HSS. 
+If they match, authentication succeeds567.
+
+S4.Pr.Q3: Two different UEs receive an authentication request simultaneously. By chance, the RAND values 
+chosen by the cellular network are the same. Are the RES signed responses identical?
+The correct answer is:
+
+No, the probability that the shared secrets of the subscribers coincide is very small ~1/2^128
+
+Explanation:
+
+Even if two UEs receive identical RAND values, their responses (RES) will differ because they use 
+different secret keys stored in their USIMs. The likelihood of shared secrets coinciding is extremely low (~1/2^128), making it practically impossible56.
+
+S4.Pr.Q4: In a 4G network
+The correct answer is:
+
+the UE authenticates the network and the network authenticates the UE
+
+Explanation:
+
+4G employs mutual authentication, where both the UE and the network verify each other's identities.
+The network authenticates the UE using RAND and XRES, while the UE authenticates the network using AUTN (Authentication Token)568.
+
+S4.Pr.Q5: In a 4G network
+The correct answer is:
+
+the encryption operation is of equal complexity to the decryption operation
+
+Explanation:
+
+Encryption and decryption in 4G use symmetric algorithms like AES or SNOW 3G, where both
+operations involve similar computational complexity910.
+
+S4.Pr.Q6: Integrity control is based on
+The correct answer is:
+
+the addition of a short code calculated from a secret key
+
+Explanation:
+
+Integrity control uses a short Message Authentication Code (MAC) derived from a
+secret key to ensure data integrity. This MAC is appended to messages and verified by recipients10.
+
+S4.Pr.Q7: The GUTI (Globally Unique Temporary Mobile Subscriber Identity)
+The correct answer is:
+
+is forged by concatenating the TMSI, the identity of the MME in the network, and the network identity (country code and operator code)
+
+Explanation:
+
+The GUTI includes components such as:
+
+PLMN identity (MCC + MNC)
+
+MME Identity (MMEI)
+
+M-TMSI (Temporary Mobile Subscriber Identity)1112.
+
+S4.Pr.Q8: GUTI is transmitted to a UE
+The correct answer is:
+
+after authentication and activation of encryption
+
+Explanation:
+
+The GUTI is transmitted only after successful mutual 
+authentication and encryption activation to protect its confidentiality during transmission
