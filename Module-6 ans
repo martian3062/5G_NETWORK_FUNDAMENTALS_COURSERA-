@@ -110,3 +110,64 @@ is ensured by a random draw mechanism by each instance on a large number of bits
 
 Each NF instance is identified by a Network Function Instance ID (NFInstanceID), which is modeled as a Unique Universal Identifier (UUID)3. 
 UUIDs are typically generated using random or pseudo-random algorithms to ensure uniqueness.
+
+M5 L5 
+S5.V5.Q1: The notification service is provided
+
+through different NFs (AMF, SMF, UDM, etc.)
+
+In 5G networks, various Network Functions (NFs) can provide notification services as part of their functionality. There isn't a single dedicated notification function, but rather this
+capability is distributed across different NFs.
+
+S5.V5.Q2: When you consider all the exchanges, including the notification.
+
+A and B are alternately clients and servers
+
+In the service-based architecture of 5G, NFs can act as both service consumers and producers. For notifications, NF A initially 
+acts as a server when B subscribes, but then becomes a client when sending notifications to B.
+
+S5.V5.Q3: When instance B wants to be notified of an event, it must
+
+request the creation of a resource corresponding to the notification by sending A a POST method
+
+To subscribe to notifications, NF B typically sends a POST request to NF A to create a subscription resource.
+
+S5.V5.Q4: the callback URI is placed
+
+by B in the POST request it sends to A when subscribing to the notification
+
+When subscribing to notifications, NF B includes its callback URI in the POST request sent to NF A. This URI is where A will send notifications.
+
+S5.V5.Q5: B wants to unsubscribe from the notification he subscribed to.
+
+it must send a DELETE for the URI of A ending with the subscribed notification ID
+
+To unsubscribe, NF B sends a DELETE request to the URI of the subscription resource, which typically includes the subscription ID.
+
+S5.V5.Q6: In case of inactivity of B, the notification service
+
+Is automatically deactivated after a time defined at the time of subscription
+
+Notification subscriptions typically have an expiry time set when they are created. If B becomes inactive,
+the subscription will automatically expire after this predefined period
+
+M5L6-1
+Question 1: The NEF, Network Exposure Function
+
+Answer: allows an external entity to access certain services offered by certain NFs in a 5G network
+Explanation: The NEF acts as an intermediary between external entities and the 5G core network. It securely exposes selected network services 
+and capabilities to authorized external applications, ensuring controlled access to specific Network Functions (NFs) within the network. 
+AMANTYATECH.COM
+
+Question 2: In the context of 5G networks, the north-bound interface is
+
+Answer: between the NEF and the external AF
+Explanation: In 5G architecture, the north-bound interface refers to the communication link between the NEF and external Application Functions (AFs). This interface allows
+external applications to access network capabilities exposed by the NEF, facilitating interactions between external services and the 5G network. 
+ETSI.ORG
+
+Question 3: A company developing services based on the 5G network wants to be notified when the UEs of customers who have subscribed to the service are switched on. This notification service
+
+Answer: is provided by the NEF which subscribes to a notification service offered by the AMF
+Explanation: The NEF subscribes to notification services provided by the Access and Mobility Management Function (AMF). This setup enables the NEF to receive alerts about the status of User Equipment (UE), 
+such as when subscribed customers' devices are powered on, allowing the company to deliver timely services based on this information
