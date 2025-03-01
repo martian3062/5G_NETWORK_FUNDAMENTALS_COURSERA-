@@ -84,3 +84,62 @@ Explanation:
 
 The GUTI is transmitted only after successful mutual 
 authentication and encryption activation to protect its confidentiality during transmission
+
+M4-L4
+S4.V4.Q1: The general philosophy of authentication in 5G is
+
+to ensure that authentication is systematically done by the subscriber's home network
+
+Explanation: 5G authentication improves upon 4G by enhancing home-network control1. The AUSF in the home network plays a central role in authenticating the UE
+, even when the UE is in a visited network2.
+
+S4.V4.Q2: The calculation of the RES* signed result is performed
+
+in the USIM and the terminal
+
+Explanation: While the search results don't explicitly state this, 5G authentication involves both the USIM card and the terminal (UE) in cryptographic operations3.
+The RES* calculation likely involves both components for enhanced security.
+
+S4.V4.Q3: We consider a terminal with a USIM card. It receives an authentication request with a RAND value. It stays in the same network but then changes cells 
+and is authenticated again. By chance, the RAND value is the same as before.
+
+The RES* value returned by the UE is the same as before
+
+Explanation: If the RAND value and network remain the same, the cryptographic inputs would be identical, resulting in the same RES* value3.
+
+S4.V4.Q4: We consider a terminal with a USIM card. It receives an authentication request with a RAND value. It then crosses the border and changes network and is authenticated again. 
+By chance, the RAND value is the same as before.
+
+The RES* value returned by the UE is different from the previous value 
+Explanation: The RES* calculation may incorporate network-specific parameters. Changing networks could potentially affect the result, even with the same RAND23.
+
+S4.V4.Q5: The HXRES* has been defined in 5G
+
+to allow the visited network to pre-authenticate the UE
+
+Explanation: The HXRES* (hash of expected response) is sent to the SEAF (in the visited network) to enable pre-authentication of the UE before full authentication is completed by 
+the home network6.
+
+
+M4L5
+The ARPF provides
+
+a key to the AUSF, which calculates a child key transmitted to the AMF/SEAF, which in turn calculates a "grandchild" key transmitted to the eNB for 
+encrypting the data transmitted over the radio channel
+
+Explanation: The ARPF derives KAUSF from the long-term key K and sends it to the AUSF. The AUSF then derives KSEAF and sends it to the SEAF/AMF. 
+The SEAF/AMF further derives KAMF, which is used to generate keys for the radio interface (eNB/gNB)158.
+
+S4.V5.Q3: The AMF/SEAF receives a K_SEAF key for a given UE calculated from a RAND. The AMF/SEAF receives a second K_SEAF key for the same UE a little later as a result of an AKA procedure but
+purely by chance the RAND value is identical.
+the value of K_SEAF' is necessarily DIFFERENT FROM the value of K_SEAF
+S4.V5.Q2: The K_SEAF key is
+
+calculated by the AUSF and transmitted to the SEAF
+
+S4.V5.Q4: A UE receives a video streaming after performing the AKA procedure (authentication and encryption activated). 
+It changes cell in the middle of the stream.
+
+there is no new AKA procedure but a new encryption key is calculated by the OLD gNB from the previous key transmitted by the NEW gNB
+
+Explanation: The AUSF derives the KSEAF (anchor key) from KAUSF and sends it to the SEAF in the Nausf_UE_Authentication_Authenticate Response message
