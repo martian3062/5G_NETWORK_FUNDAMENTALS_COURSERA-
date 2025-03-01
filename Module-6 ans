@@ -1,1 +1,26 @@
+m5l1
+The 5G core network is based on:
+
+on a service-based architecture
+
+Explanation: The 5G core network utilizes a cloud-aligned, service-based architecture (SBA) that spans across all 5G functions and interactions137.
+
+Consider an SMF and a UE that is engaged in a PDU session activation procedure. The SMF dialogues with other NF network functions. It behaves:
+
+alternately as client and server
+
+Explanation: In the service-based architecture of 5G, network functions can act as both service consumers and producers, allowing the SMF to behave alternately as a client and server when interacting with other network functions37.
+
+Between the SMF and the PCF, is defined:
+
+the reference point N7
+
+Explanation: While the search results don't explicitly mention the N7 reference point between SMF and PCF, in 5G core architecture, network functions are typically connected via standardized reference points. The N7 reference point is the standard interface between SMF and PCF.
+
+A service of a network function is accessible via:
+
+an API (Application Programming Interface)
+
+Explanation: In the 5G core service-based architecture, network functions expose their services through HTTP-based APIs, replacing protocols like Diameter used in previous generations37.
+
 
