@@ -84,3 +84,77 @@ Explanation:
 
 The GUTI is transmitted only after successful mutual 
 authentication and encryption activation to protect its confidentiality during transmission
+
+M4L1 
+S4.V1.Q1: Compared to a 2G/3G or 4G mobile network, a 5G network is
+The correct answer is:
+
+more likely to be attacked as there are many interconnections with other networks or systems
+
+Explanation:
+
+5G networks introduce more interconnections with external systems, such as IoT devices, edge computing, and cloud services.
+This increases the attack surface,
+making them more vulnerable to cyberattacks compared to earlier generations6712.
+
+S4.V1.Q2: Compared to an attack on a 2G/3G/4G network, an attack on a 5G network
+The correct answer is:
+
+may have more serious consequences because the 5G network is a support for many services, some of which involve human lives
+
+Explanation:
+
+5G networks are critical for applications like autonomous vehicles, remote surgeries, and smart cities. Attacks on these networks 
+can have severe consequences, including risks to human lives and critical infrastructure568.
+
+S4.V1.Q3: To secure a 5G network
+The correct answer is:
+
+all accesses, radio and fixed, must be secured
+
+Explanation:
+
+Securing a 5G network requires a comprehensive approach that includes securing both radio and fixed network accesses. This involves encryption,
+authentication, and protection of all interfaces to mitigate vulnerabilities across the entire infrastructure71015.
+
+M4L2 
+
+S4.V2.Q1: The ARPF (Authentication Credential Repository and Processing Function)
+The correct answer is:
+
+stores the permanent key of each subscriber and provides the AUSF with keys to derive encryption and integrity keys
+
+Explanation:
+
+The ARPF is responsible for securely storing the subscriber's permanent key and generating authentication vectors. It provides these vectors
+to the AUSF, which uses them to derive encryption and integrity keys for secure communication678.
+
+S4.V2.Q2: The ARPF is a function that in practice is performed by
+The correct answer is:
+
+UDM
+
+Explanation:
+
+The ARPF is a functional component of the UDM (Unified Data Management) in 5G. It works closely with the AUSF to generate authentication vectors 
+based on the subscriber's shared secret key68.
+
+S4.V2.Q3: The ARPF linked to a UE is
+The correct answer is:
+
+always in the UE's home network
+
+Explanation:
+
+The ARPF resides in the home network of the UE because it stores the subscriber's permanent authentication credentials, which are managed by the home network operator6711.
+
+S4.V2.Q4: The AUSF (Authentication Server Function)
+The correct answer is:
+
+performs authentication and provides authentication vectors that can only be used within the requesting network
+
+Explanation:
+
+The AUSF performs subscriber authentication and generates authentication vectors. These vectors are specific to the requesting network and 
+cannot be used by other networks, ensuring security and privacy
+
