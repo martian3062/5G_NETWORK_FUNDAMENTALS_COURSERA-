@@ -143,3 +143,26 @@ It changes cell in the middle of the stream.
 there is no new AKA procedure but a new encryption key is calculated by the OLD gNB from the previous key transmitted by the NEW gNB
 
 Explanation: The AUSF derives the KSEAF (anchor key) from KAUSF and sends it to the SEAF in the Nausf_UE_Authentication_Authenticate Response message
+
+
+M4L6 
+
+S4.V6.Q1: A bidding-down attack consists in
+
+forcing the terminal and the network in a negotiation to use a degraded exchange mode
+
+Explanation: A bidding-down attack aims to reduce the security of a mobile network connection by forcing the use of weaker encryption
+algorithms or downgrading to prior network generations12. This allows an adversary to exploit vulnerabilities and potentially harm network users.
+
+S4.V6.Q2: To prevent a successful bidding-down attack on the security capabilities of a UE,
+
+These security capabilities are transmitted in clear text by the UE and echoed by the AMF with integrity check protection
+
+Explanation: While the search results don't explicitly state this, it's a common security practice to transmit capabilities in clear text and have them echoed
+back with integrity protection to prevent tampering. This allows the UE to verify that its capabilities haven't been altered during transmission.
+
+S4.V6.Q3: A bidding-down attack in 5G
+
+is detected then stopped
+
+Explanation: While bidding-down attacks are still possible in 5G networks, various mitigations have been integrated into the latest 4G and 5G specifications2. These mitigations aim to detect and prevent such attacks, although the effectiveness varies across implementations and devices.
