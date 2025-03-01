@@ -23,4 +23,90 @@ an API (Application Programming Interface)
 
 Explanation: In the 5G core service-based architecture, network functions expose their services through HTTP-based APIs, replacing protocols like Diameter used in previous generations37.
 
+M5L2
 
+1- B 
+S5.V2.Q2: The general philosophy behind the specification of SBI interfaces is
+
+to focus on readability and scalability of messages
+
+The 5G Service-Based Architecture (SBA) and Service-Based Interfaces (SBI) are
+designed to enhance flexibility and scalability of 5G networks. They allow for easy introduction of new services and dynamic interaction between network functions2.
+
+S5.V2.Q3: A fundamental aspect of REST is
+
+to provide a uniform interface for handling resources
+
+RESTful principles are employed in designing service-based interfaces in 5G. REST (Representational State Transfer) provides a uniform interface for handling resources,
+which aligns with the service-based architecture of 5G networks2.
+
+S5.V2.Q4: Each resource is accessible by
+
+its URI
+
+In RESTful architectures, resources are typically accessed via their Uniform Resource Identifiers (URIs)28.
+
+S5.V2.Q5: Which string represents a possible URI in 5G
+
+The correct answer is not explicitly provided in the search results. However, based on RESTful principles and 5G naming conventions, a plausible URI format would be:
+
+http://5Goperator/nudm-sdm/v2/imsi-208-10-12345678/smf-select-data
+
+This format includes the operator domain, the network function (nudm-sdm), version (v2), subscriber identifier (IMSI), and the specific resource (smf-select-data).
+
+M5L3 
+S5.V3.Q1: CRUD means
+
+the 4 basic operations Create, Read, Update, Delete that allow interaction with a database
+
+CRUD is an acronym that stands for Create, Read, Update, and Delete. These are the four fundamental operations for persistent storage and database management19.
+
+S5.V3.Q2: To read the status of a resource in an NF, you must send it
+
+an HTTP GET method
+
+In RESTful APIs, which are used in 5G core network communications, the GET method is used to retrieve or read resource information9.
+
+S5.V3.Q3: An instance of an NF function (e.g. UDM)
+
+can memorise a context but this is done through the creation of a resource that will correspond to this context
+
+While the search results don't directly address this question, based on the service-based architecture of 5G and RESTful principles, network functions can maintain state through resources. When context needs 
+to be stored, it's typically done by creating a resource that represents that context, allowing for stateful interactions within a generally stateless architecture.
+
+M5 L4
+
+S5.V4.Q1: We consider a 5G network operational at a given time. Select the correct statement.
+
+There are one or more instances of AMF, SMF, AUSF and UDM running
+
+In a 5G network, multiple instances of network functions can exist to support scalability and load balancing38.
+
+S5.V4.Q2: An NRF instance
+
+Allows an NF instance to get the list of the instances providing a given NF service
+
+The Network Repository Function (NRF) discovers network function instances and provides information about available NF instances and their supported services24.
+
+S5.V4.Q3: The list of NF instances is known to the NRF instance (2 possible methods)
+
+because each instance registers with the NRF when it activates and deregisters when it stops
+
+because the operator has registered them in the NRF instance
+
+NF instances register with the NRF when they come up2. Additionally, operators can configure NF instances locally3.
+
+S5.V4.Q4: The way to reach an NF instance is indicated by the NRF in the form (select 2 answers)
+
+an IP address (IPv4 or IPv6)
+
+a symbolic name or FQDN
+
+The NRF provides endpoint information such as IP addresses and FQDNs for NF instances34.
+
+S5.V4.Q5: The uniqueness of the identity of an instance
+
+is ensured by a random draw mechanism by each instance on a large number of bits
+
+Each NF instance is identified by a Network Function Instance ID (NFInstanceID), which is modeled as a Unique Universal Identifier (UUID)3. 
+UUIDs are typically generated using random or pseudo-random algorithms to ensure uniqueness.
