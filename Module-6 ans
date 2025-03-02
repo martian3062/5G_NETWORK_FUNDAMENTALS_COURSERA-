@@ -171,3 +171,116 @@ Question 3: A company developing services based on the 5G network wants to be no
 Answer: is provided by the NEF which subscribes to a notification service offered by the AMF
 Explanation: The NEF subscribes to notification services provided by the Access and Mobility Management Function (AMF). This setup enables the NEF to receive alerts about the status of User Equipment (UE), 
 such as when subscribed customers' devices are powered on, allowing the company to deliver timely services based on this information
+
+M5 L6- 2 
+
+S5.V6.Q4: Why is the UDM involved in the procedure
+
+to convert the externally visible subscriber ID (e.g. a telephone number) into a SUPI
+
+The UDM (Unified Data Management) is involved to translate the external identifier (like a phone number) into the internal SUPI (Subscription Permanent Identifier) used within the 5G core network.
+
+S5.V6.Q5: The diagram does not show a Callback URI. We only consider exchanges within the 5G core network.
+
+Both Nudm_EventExposure_Subscribe Request and Namf_EventExposure_Subscribe Request contain the same Callback URI linked to a NEF resource
+
+In a typical 5G event subscription flow, both the UDM and AMF subscription requests would contain the same Callback URI pointing to a NEF resource, allowing notifications to be routed back through the NEF.
+
+S5.V6.Q6: Why is the notification of the event not sent directly from the AMF to the external AF?
+
+because there is no exchange in any direction between the external and any NF in the 5G network other than the NEF
+
+The NEF (Network Exposure Function) acts as a secure gateway between external applications and the 5G core network. All communication
+between external AFs and internal network functions must go through the NEF for security and proper exposure control.
+
+S5.V6.Q7: You work for a company that develops services based on the 5G network. What should you ask the operator?
+
+What APIs are available on the NEF?
+
+As a service developer, you should inquire about the APIs available on the NEF, as these are the interfaces exposed to external applications for accessing 5G network capabilities and services.
+
+M5 L6-3
+1. -A
+S5.V6.Q9: The Nsmf_EventExposure_Subscribe Request message sent by the UDM
+
+The correct answer is:
+
+contains the same Callback URI as the one contained in Nudm_EventExposure_Subscribe Request
+
+Explanation:
+In the 5G service-based architecture, when subscribing to event notifications, the Callback URI is typically propagated through the chain of subscriptions.
+The UDM would include the same Callback URI in its request to the SMF as it received from the NEF. This allows notifications to be routed back through the same path to eventually reach the external AF.
+
+M5 
+S5.DS.Q1: With REST, a resource
+
+can be created, modified and deleted
+
+REST (Representational State Transfer) allows full CRUD (Create, Read, Update, Delete) operations on resources.
+
+S5.DS.Q2: Which string represents a possible URI in 5G
+
+http://5Goperator/nudm/uecm/v2/imsi-208-10-12345678/registration
+
+This URI follows the structure described in the 5G specifications, with the operator domain, network function (nudm), service (uecm), version (v2), subscriber identifier (IMSI), and specific resource (registration).
+
+S5.DS.Q3: Consider the registration of a new instance with the NRF instance in the commercial network of an operator. Select the plausible scenario from those proposed in the drawing above.
+
+B
+
+Scenario B is most plausible, as it shows the NF instance registering directly with the NRF, which aligns with how 5G network functions typically register their services.
+
+S5.DS.Q4: When a new instance of an NF registers with the NRF, it must indicate
+
+its IP address or FQDN
+
+NF instances typically provide either their IP address or Fully Qualified Domain Name (FQDN) when registering with the NRF to allow other NFs to locate and communicate with them.
+
+S5.DS.Q5: To discover an instance of a particular NF function, you must
+
+Query an instance of NRF
+
+The Network Repository Function (NRF) is responsible for maintaining a registry of NF instances and their capabilities, allowing other NFs to discover available services.
+
+S4.DS.Q6: Write the name of an EIR API
+
+N5g-eir_EquipmentIdentityCheck
+
+S4.DS.Q7: How many services are provided by the EIR?
+
+1
+
+The EIR provides one service: the Equipment Identity Check service.
+
+S4.DS.Q8: What is the only http operation possible on this API
+
+GET
+
+The EIR API typically only supports GET operations to check the status of equipment.
+
+S4.DS.Q9: What is the corresponding full URI to be used to verify that a terminal is authorised to operate?
+
+http://syltel.com/n5g-eir-eic/v1/equipment-status
+
+This URI follows the structure described in the specifications for the EIR service.
+
+S4.DS.Q10: In this particular case, what is considered a resource?
+
+the state of each terminal is a specific resource
+
+Each terminal's status (whitelisted, blacklisted, etc.) is considered a distinct resource in the EIR.
+
+S4.DS.Q11: Captain Haddock (a good guy) has purchased a terminal and taken out a subscription with Syldavie Telecom. 
+What answer is returned by the 5g-eir when it is consulted to find out the status of his terminal?
+
+a RESULT 200 OK message with the value WHITELISTED in the EirResponse Data field
+
+For a valid terminal, the EIR would return a 200 OK response with WHITELISTED status.
+
+S4.DS.Q12: Roberto Rastapopoulos (a bad guy) stole a terminal. The theft was reported and the 5G-eir was updated. Which answer is
+returned when the 5G-eir is consulted for the status of his terminal?
+
+a RESULT 200 OK message with the value BLACKLISTED in the EirResponse Data field
+
+For a stolen terminal, the EIR would return a 200 OK response with BLACKLISTED status.
+
