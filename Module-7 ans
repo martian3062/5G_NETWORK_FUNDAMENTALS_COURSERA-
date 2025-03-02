@@ -1,0 +1,181 @@
+m6l2
+S6.V2.Q1: We consider a signalling exchange between an AMF instance and an AUSF instance in the same network
+
+The correct answer is:
+
+exchanges are preferably encrypted by a TLS connection or by an IPsec Tunnel 
+
+Explanation: According to the search results, all network functions in the 5G core must support mutually authenticated TLS for securing control plane signaling. However, IPsec can also be used for protection at the IP layer. 
+The 3GPP standards recommend using TLS, but allow for other security mechanisms as well.
+
+S6.V2.Q2: Securing SBI interfaces is based on
+
+A certificate exchange and asymmetric cryptography
+
+Explanation: The search results indicate that SBI security uses TLS with certificates for mutual authentication between network functions. TLS relies on asymmetric cryptography and certificate exchange for establishing secure connections.
+
+S6.V2.Q3: The TLS protocol can be used
+
+for reference points that correspond to an SBI interface
+
+Explanation: The search results specifically mention that TLS is used to secure the Service-Based Interfaces (SBI) in the 5G core network. 
+The SBI uses HTTP/2 over TLS for communication between network functions.
+
+M6L3
+S6.V3.Q1: Consider the country code MCC=214 and the operator code MNC=07 in this country. What is the FQDN of the NRF?
+
+nrf.5gc.mnc007.mcc214.3gppnetwork.org
+
+Explanation: According to the search results, the format for NRF FQDN is "nrf.5gc.mnc<MNC>.mcc<MCC>.3gppnetwork.org". For MCC=214 and MNC=07,
+the correct FQDN is nrf.5gc.mnc007.mcc214.3gppnetwork.org. Note that the MNC is padded with a leading zero to make it 3 digits.
+
+S6.V3.Q2: A French subscriber goes to Spain and the UE tries to access the visited network and registers. There is no context stored by the local instance.
+
+The AMF in Spain contacts the local NRF who in turn contacts the French NRF, who in turn knows about the French UDM
+
+Explanation: While the search results don't explicitly describe this scenario, in 5G networks, the local NRF typically contacts the home network's NRF to discover 
+the appropriate services in the home network, such as the UDM.
+
+S6.V3.Q3: Continuation of the previous question. The NRF in Spain knows the NRF to contact because
+
+The request sent by the AMF necessarily contains the MCC and the MNC of the subscriber
+
+Explanation: The search results indicate that the MCC and MNC are used to construct FQDNs for various network functions. It's reasonable to assume that the AMF
+includes the subscriber's MCC and MNC in its request, allowing the local NRF to construct the appropriate FQDN for the home network's NRF.
+
+S6.V3.Q4: Select the correct statement
+
+Registration of an instance with the NRF is local and discovery can be done between different networks
+
+Explanation: While the search results don't explicitly state this, it aligns with the general architecture of 5G networks. NF instances typically register with their local NRF,
+but the NRF can facilitate discovery of services across different networks, as evidenced by the inter-PLMN routing capabilities mentioned in the search results.
+
+M6l4
+S6.V4.Q1: A SEPP
+
+supports transport level encryption/decryption via TLS
+
+Explanation: According to the search results, SEPP provides secure end-to-end inter-PLMN communications using TLS mutual authentication2. It also supports TLSv1.2/TLSv1.3 for protecting communications2.
+
+S6.V4.Q2: Select the functions performed by a SEPP for a message arriving from the interconnection network (select 2 answers)
+
+integrity check and filtering if necessary
+encryption/decryption
+
+Explanation: The search results indicate that SEPP performs integrity protection for interPLMN SBI signaling traffic3 and implements filtering functionality5. Additionally, SEPP is responsible
+for encryption/decryption of messages to/from other PLMN's SEPP37.
+
+S6.V4.Q3: Between SEPPs, circulate
+
+only signalling
+
+Explanation: The search results consistently mention that SEPP is responsible for handling signaling traffic between networks. For example, it's stated that SEPP "enables end-to-end encryption, 
+based on the HTTPS protocol, of 5G signaling between two roaming partners"
+6. There is no mention of user data being handled by SEPP.
+
+M6L5
+S6.V5.Q1: An NF instance
+
+must perform a mutual authentication with the NRF of the same PLMN and then ask it for an authorisation to use services of another NF instance of this PLMN
+
+Explanation: According to the search results, NF instances must authenticate with the NRF (Network Repository Function) which acts as the OAuth 2.0 Authorization server. The NRF then provides authorization for the NF instance to access services of other NF instances in the same PLMN.
+
+S6.V5.Q2: OAuth2.0
+
+is a protocol that allows a server to delegate authorization to access resources
+
+Explanation: The search results describe OAuth 2.0 as an authorization framework used in 5G networks. It allows the NRF (acting as the authorization server) to issue access tokens to NF service consumers, which can then be used to access services offered by NF service producers.
+
+S6.V5.Q3: Thanks to OAuth2.0
+
+an NF instance A receives authorisation from the NRF to use certain services of another NF instance B
+
+Explanation: The OAuth 2.0 framework as implemented in 5G allows for granular authorization. The NRF issues access tokens that specify which services or operations an NF instance is authorized to access from another NF instance. This allows for fine-grained control over service access between NF instances.
+
+M6 L6 
+S6.V6.Q1: We consider an exchange between two NF instances in different PLMN. An NF instance
+
+shall have performed a mutual authentication procedure with the local SEPP which itself has performed a mutual authentication procedure with the remote SEPP if B is located in a different PLMN.
+
+Explanation: According to the search results, for inter-PLMN communication, authentication between NFs in different PLMNs is implicit through authentication between the NF and its local SEPP, and then between SEPPs of different PLMNs.
+
+S6.V6.Q2: OAuth2.0
+
+is used to manage the authorisation of a service from an NF instance by an NF instance in a different network
+
+Explanation: The search results indicate that OAuth 2.0 is used for service access authorization in roaming scenarios, where NFs from different PLMNs interact.
+
+S6.V6.Q3: During the authorisation procedure for an inter-PLMN service, the access token is sent
+
+by the hNRF (pNRF)
+
+Explanation: According to the search results, in roaming scenarios, the home Network Repository Function (hNRF) acts as the OAuth 2.0 Authorization server for the home PLMN and generates the access token.
+
+S6.V6.Q4: When exchanging between NF instances of different networks
+
+All exchanges pass through SEPP
+
+Explanation: The search results suggest that SEPPs are used for all inter-PLMN communications to ensure secure exchange of information between networks.
+
+M6 HOMEWORK 
+
+S6.DS.Q1: An operator secures the reference point N3 with a network level cryptographic solution. The protocol used to establish a security association is
+
+IKE
+
+IKE (Internet Key Exchange) is typically used to establish security associations for IPsec, which is a network-level security protocol.
+
+S6.DS.Q2: Continuation of the previous question. The protocol used to encrypt data packets is
+
+ESP
+
+ESP (Encapsulating Security Payload) is the protocol used within IPsec to encrypt data packets.
+
+S6.DS.Q3: Let us consider an operator who systematically uses cryptographic solutions to secure its network. We consider, on the reference point N3, the data flow of two UEs.
+
+both streams are encrypted with the same key
+
+When using network-level encryption like IPsec on the N3 interface, typically a single set of security associations is used for all traffic on that interface, meaning both UE data streams would be encrypted with the same key.
+
+S6.DS.Q4: Consider an exchange between 2 instances of NFs secured only with TLS and an attacker who has managed to place himself on the path between the 2 instances.
+
+The attacker cannot know the content of the messages but can identify the IP addresses of the two instances
+
+TLS encrypts the content of the messages, but the IP headers remain visible to allow routing.
+
+S6.DS.Q5: Continuation of the previous question.
+
+The attacker cannot change any part of the HTTP message, nor truncate it
+
+TLS provides both confidentiality and integrity protection, preventing an attacker from modifying or truncating messages without detection.
+
+S6.DS.Q6: Consider two instances A and B of NF in two different networks (interconnected via another network)
+
+all exchanges between A and B pass through the SEPP of each network
+
+For inter-PLMN communication, all exchanges between NFs in different networks pass through the SEPP of each network to ensure secure communication.
+
+S6.DS.Q7: OAuth2.0
+
+can be used to manage authorisation between NFs of the same or different PLMNs
+
+OAuth 2.0 is used for authorization in both intra-PLMN and inter-PLMN scenarios in 5G networks.
+
+S6.DS.Q8: An NF instance A in PLMN P wants to use a service of an NF instance B in PLMN Q. Instance A requests an access token
+
+from the NRF of PLMN Q via the NRF of PLMN P
+
+In inter-PLMN scenarios, the local NRF (in PLMN P) would forward the token request to the NRF of the home network (PLMN Q) of the target NF.
+
+S6.DS.Q9: The 5g-eir function of Syldavie Telecom must be accessible to other networks and operators in other countries and we choose to use the naming scheme used for the nrf. Which APIroot should be used to build the URI?
+
+http://5g-eir.5gc.mnc013.mcc299.3gppnetwork.org
+
+This follows the standard FQDN format for 5G network functions, including the function name (5g-eir), network type (5gc), MNC, MCC, and standard domain.
+
+S6.DS.Q10: What is the complete URI to be used to verify from another network that a terminal is authorised to operate?
+
+http://5g-eir.5gc.mnc013.mcc299.3gppnetwork.org/n5g-eir-eic/v1/equipment-status
+
+This URI combines the correct APIroot with the specific path for the equipment status check service.
+
