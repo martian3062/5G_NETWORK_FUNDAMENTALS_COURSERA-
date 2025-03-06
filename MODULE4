@@ -2,10 +2,8 @@ m3l1
 
  1. CUPS consists of
 separating the control and data planes for the nodes concerned by user data flow
-
  2. In a 5G CUPS architecture, the UPF
 applies the routing policy sent by the SMF
-
 3. In CUPS architecture, a UPF
  systematically receives from the SMF a set of rules defining the forwarding and QoS management for each new data flow
 
